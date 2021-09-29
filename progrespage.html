@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Page</title>
+</head>
+
+<body>
+    <main class="container">
+
+        <div>
+            <input id="input-progress" cols="10" rows="10">
+            <button id="btn-submit">Submit</button>
+        </div>
+
+
+        <div>
+            <h4 class="your-progress">Progress List</h4>
+            <ul id="progress-list">
+
+            </ul>
+        </div>
+    </main>
+    <script>
+        const BtnSubmit = document.getElementById('btn-submit')
+        const BtnDelete = document.getElementById('btn-delete')
+        const ProgressList = document.getElementById('progress-list')
+        const InputProgress = document.getElementById('input-progress')
+
+        BtnSubmit.addEventListener('click', function(event) {
+            event.preventDefault()
+            const input = InputProgress.value
+            console.log(input)
+            const li = document.createElement('li')
+            li.classList.add('list-group-item')
+            li.innerHTML = `<div class="progres">${input} <button id="btn-delete">Delete</button></div>`
+
+            ProgressList.appendChild(li)
+        })
+    </script>
+</body>
+
+</html>
